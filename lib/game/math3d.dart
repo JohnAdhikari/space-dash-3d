@@ -40,9 +40,8 @@ class Camera {
   final double fovYDeg;
   final double _near;
 
-  Camera({Vec3? pos, this.fovYDeg = 64, double near = 0.1})
-      : pos = pos ?? const Vec3(0, 1.9, 5),
-        _near = near;
+  Camera({Vec3? pos, this.fovYDeg = 64, this._near = 0.1})
+      : pos = pos ?? const Vec3(0, 1.9, 5);
 
   double get focal => 1 / math.tan(fovYDeg * math.pi / 360); // focal in "world units -> px per unit"
 
